@@ -123,7 +123,7 @@ Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.BorderSizePixel = 4
 Main.Position = UDim2.new(0.264456451, 0, 0.14478527, 0)
 Main.Size = UDim2.new(0, 754, 0, 578)
-Main.ZIndex = 10
+Main.ZIndex = 200
 
 Gradient_2.Name = "Gradient"
 Gradient_2.Parent = Main
