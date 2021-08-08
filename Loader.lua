@@ -1,3 +1,6 @@
+
+-- Instances:
+
 local VodexLoader = Instance.new("ScreenGui")
 local KeyFrame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -8,6 +11,7 @@ local TextLabel_4 = Instance.new("TextLabel")
 local Gradient = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
 local Main = Instance.new("Frame")
 local Gradient_2 = Instance.new("Frame")
 local UIGradient_2 = Instance.new("UIGradient")
@@ -22,8 +26,9 @@ local JailBreak = Instance.new("TextButton")
 local BadBuissness = Instance.new("TextButton")
 local TextLabel_7 = Instance.new("TextLabel")
 local Strucid = Instance.new("TextButton")
-local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
 
+--Properties:
 
 VodexLoader.Name = "VodexLoader"
 VodexLoader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -100,13 +105,25 @@ UIGradient.Parent = Gradient
 UICorner.CornerRadius = UDim.new(0, 4)
 UICorner.Parent = Gradient
 
+TextButton.Parent = KeyFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+TextButton.BorderSizePixel = 3
+TextButton.Position = UDim2.new(0.373673052, 0, 0.53719008, 0)
+TextButton.Size = UDim2.new(0, 117, 0, 50)
+TextButton.Font = Enum.Font.Oswald
+TextButton.Text = "Submit"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
 Main.Name = "Main"
 Main.Parent = VodexLoader
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.BorderSizePixel = 4
 Main.Position = UDim2.new(0.264456451, 0, 0.14478527, 0)
 Main.Size = UDim2.new(0, 754, 0, 578)
-Main.Visible = false
+Main.ZIndex = 10
 
 Gradient_2.Name = "Gradient"
 Gradient_2.Parent = Main
@@ -244,19 +261,39 @@ Strucid.TextScaled = true
 Strucid.TextSize = 14.000
 Strucid.TextWrapped = true
 
-TextButton.Parent = VodexLoader
-TextButton.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
-TextButton.Position = UDim2.new(0.383191973, 0, 0.984049082, 0)
-TextButton.Size = UDim2.new(0, 319, 0, 13)
-TextButton.Font = Enum.Font.Oswald
-TextButton.Text = "Click To Open Vodex"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 28.000
-TextButton.TextWrapped = true
+TextButton_2.Parent = VodexLoader
+TextButton_2.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+TextButton_2.Position = UDim2.new(0.383191973, 0, 0.984049082, 0)
+TextButton_2.Size = UDim2.new(0, 319, 0, 13)
+TextButton_2.Font = Enum.Font.Oswald
+TextButton_2.Text = "Click To Open Vodex"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 28.000
+TextButton_2.TextWrapped = true
 
+-- Scripts:
 
+local function PEXRW_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
 
-local function FCFIDK_fake_script() 
+	local button = script.Parent
+	local keyBox = script.Parent.Parent.TextBox
+	local keyEntered = script.Parent.Parent.TextBox.Text
+	local key = "23498237234" 
+	
+	function clicked()
+		if keyEntered == key then
+			keyEntered = key
+			print("Wrong Key")
+		else
+			print("Correct Key")
+		end
+	end
+	
+	button.MouseButton1Click:Connect(clicked)
+end
+coroutine.wrap(PEXRW_fake_script)()
+local function JGTHY_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	local arsenal = script.Parent.Arsenal
@@ -298,9 +335,9 @@ local function FCFIDK_fake_script()
 		print(unworking)
 	end)
 end
-coroutine.wrap(FCFIDK_fake_script)()
-local function GEJMKSP_fake_script() 
-	local script = Instance.new('LocalScript', TextButton)
+coroutine.wrap(JGTHY_fake_script)()
+local function ILYK_fake_script() -- TextButton_2.Rainbower 
+	local script = Instance.new('LocalScript', TextButton_2)
 
 	while wait() do
 		script.Parent.TextColor3 = Color3.new(1,0,0)
@@ -330,9 +367,9 @@ local function GEJMKSP_fake_script()
 		end
 	end
 end
-coroutine.wrap(GEJMKSP_fake_script)()
-local function HYZYN_fake_script() 
-	local script = Instance.new('LocalScript', TextButton)
+coroutine.wrap(ILYK_fake_script)()
+local function WGDY_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Parent.Main.Visible == false then
@@ -342,4 +379,4 @@ local function HYZYN_fake_script()
 		end
 	end)
 end
-coroutine.wrap(HYZYN_fake_script)()
+coroutine.wrap(WGDY_fake_script)()
